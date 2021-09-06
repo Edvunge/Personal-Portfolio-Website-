@@ -194,6 +194,16 @@ img{
         transform: translateX(25px);
     }
 }
+@keyframes fadeInTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .section-title{
     
     padding: 0 15px;
@@ -481,6 +491,11 @@ img{
 .about-section .tab-content{
     flex: 0 0 100%;
     max-width: 100%;
+    display: none;
+}
+.about-section .tab-content.active{
+    display: block;
+    animation: fadeInTop 0.5s ease;
 }
 .about-section .skills{
     padding:0 0 40px;
@@ -519,6 +534,7 @@ img{
     color: var(--text-black-600);
     margin-top: -40px;
 }
+.about-section .education,
 .about-section .experience{
     padding-bottom: 80px;
 }
@@ -558,11 +574,15 @@ img{
     position: absolute;
     width: 30px;
     height: 1px;
-    background-color: red;
+    background-color: var(--bg-black-100);
     top: 37px;
+    z-index: -1;
 }
 .about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner:before{
     right: -30px;
+}
+.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner:before{
+    left: -30px;
 }
 .about-section .timeline .timeline-item-inner .icon{
     height: 40px;
