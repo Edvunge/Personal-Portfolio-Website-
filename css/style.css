@@ -821,4 +821,21 @@ img{
 .portfolio-popup .pp-main-inner{
     background-color: violet;
     padding: 70px 0 50px;
+    position: relative;
+}
+.portfolio-popup .pp-project-details-btn{
+    position: absolute;
+    left: 0;
+    background-color: red;
+    top: 15px;
+    height: 40px;
+    line-height: 40px;
+}
+.portfolio-popup .pp-close{
+    position: absolute;
+    right: 0;
+    background-color: blue;
+    height: 40px;
+    width: 40px;
+    top: 15px;
 }
