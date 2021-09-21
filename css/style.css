@@ -812,8 +812,8 @@ img{
     height: 100%;
     z-index: 1000;
     overflow-y: scroll;
-    /*opacity: 0;
-    visibility: hidden;*/
+    opacity: 0;
+    visibility: hidden;
     transition: all  0.3s ease;
 }
 .portfolio-popup.open{
@@ -831,6 +831,12 @@ img{
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.portfolio-popup .pp-loader.active{
+    visibility: visible;
+    opacity: 1;
 }
 .portfolio-popup .pp-loader div{
     height: 40px;
