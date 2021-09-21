@@ -21,6 +21,9 @@
     })
 })();
 
+function bodyScrollingToggle(){
+    document.body.classList.toggle("stop-scrolling");
+}
 
 /*----------------  portfolio filter and popup  -----------------*/
 
@@ -58,5 +61,33 @@
             })
         }
     })
+
+
+    portfolioItemsContainer.addEventListener("click", (event) =>{
+        if(event.target.closest(".portfolio-item-inner")){
+            const portfolioItem = event.target.closet(".portfolio-item-inner").parentElement;
+            itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(portfolioItem);
+            screenshots = portfolioItems[itemIndex].querySelector(".portfolio-item-img img").getAttribute("data-screenshots");
+            screenshots = screenshots.split(",");
+            slideIndex = 0;
+            popupToggle();
+            popupSlidedeshow();
+        }
+    })
+
+    closeBtn.addEventListener("click", () =>{
+        popupToggle();
+    })
+
+    function popupToggle() {
+        popup.classList.toggle("open");
+        bodyScrollingToggle();
+    }
+
+    function popupSlideshow() {
+        const imgSrc = screenshots[slideIndex];
+        const popupImg = popup.querySelector(".pp-img");
+        popupImg.Src=imgSrc;
+    }
 
 })();
